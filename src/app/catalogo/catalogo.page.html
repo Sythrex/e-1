@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>catalogo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title>Autos</ion-card-title>
+      <ion-card-subtitle>Semi-nuevos</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+  
+        <ion-item button *ngFor ="let producto of catalogo">
+          <ion-thumbnail slot="start">
+            <img [src]="producto.img" alt="{{producto.nombre}}"/>
+          </ion-thumbnail>
+          <ion-label>{{producto.nombre}}</ion-label>
+          <ion-card-subtitle>{{producto.precio}}</ion-card-subtitle>
+        </ion-item>
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
